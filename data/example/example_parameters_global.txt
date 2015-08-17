@@ -1,0 +1,33 @@
+# sample name
+example
+# accuracy of MCMC (low/medium/high)
+low
+# isotope parameters folder
+data/example/isotope_parameters
+# sample spectrum file name
+data/example/root_files/example_spectrum_sig.root
+# background spectrum file name
+data/example/root_files/example_spectrum_bck.root
+# efficiency file name
+data/example/root_files/example_simulated_efficiencies.root
+# resolution file name
+data/example/root_files/example_resolution_function.root
+# results folder
+data/example/results
+# measurement time of sample spectrum (sec.)
+1.2e6
+# measurement time of background spectrum (sec.)
+2.4e6
+# isotopes to analyze 
+U238
+Ra226
+Th228
+Ra228
+U235
+Co60
+K40
+Cs137
+Mn54
+Ti44
+Na22
+Al26

@@ -1,0 +1,96 @@
+
+ -----------------------------------------------------
+ Summary
+ -----------------------------------------------------
+
+ Model summary
+ =============
+ Model: Multi-template Fitter
+ Number of parameters: 3
+ List of Parameters and ranges:
+  (0) Parameter "sample_const_peak0": [0, 35]
+  (1) Parameter "bck_const_peak0": [0, 21]
+  (2) Parameter "bck_gauss_peak0": [0, 22]
+
+ Results of the optimization
+ ===========================
+ Optimization algorithm used: Minuit
+ Log of the maximum posterior: 1.04561e+14
+ List of parameters and global mode:
+  (0) Parameter "sample_const_peak0": 6.38861 +- 3.29868
+  (1) Parameter "bck_const_peak0": 2.14455 +- 1.87445
+  (2) Parameter "bck_gauss_peak0": 8.31095 +- 2.92304
+
+ Results of the integration
+ ============================
+ Integration method used: Cuba
+ Evidence: 2.9015e+16 +- 2.50723e+14
+
+ Results of the marginalization
+ ==============================
+ Marginalization algorithm used: Metropolis
+ List of parameters and properties of the marginalized
+ distributions:
+  (0) Parameter "sample_const_peak0":
+      Mean +- sqrt(V):                7.65 +- 3.469
+      Median +- central 68% interval: 7.217 +  3.717 - 2.926
+      (Marginalized) mode:            5.075
+       5% quantile:                   2.671
+      10% quantile:                   3.644
+      16% quantile:                   4.29
+      84% quantile:                   11.15
+      90% quantile:                   12.19
+      95% quantile:                   14.06
+      Smallest interval(s) containing at least 68% and local mode(s):
+       (3.85, 9.8) (local mode at 5.075 with rel. height 1; rel. area 0.6122)
+       (9.8, 11.2) (local mode at 10.32 with rel. height 0.62; rel. area 0.0868)
+
+  (1) Parameter "bck_const_peak0":
+      Mean +- sqrt(V):                3.601 +- 2.278
+      Median +- central 68% interval: 3.231 +  2.485 - 1.801
+      (Marginalized) mode:            2.415
+       5% quantile:                   0.7323
+      10% quantile:                   1.09
+      16% quantile:                   1.43
+      84% quantile:                   5.829
+      90% quantile:                   6.654
+      95% quantile:                   8.03
+      Smallest interval(s) containing at least 68% and local mode(s):
+       (0.84, 5.04) (local mode at 2.415 with rel. height 1; rel. area 0.6969)
+
+  (2) Parameter "bck_gauss_peak0":
+      Mean +- sqrt(V):                8.5 +- 2.969
+      Median +- central 68% interval: 8.19 +  3.153 - 2.419
+      (Marginalized) mode:            7.81
+       5% quantile:                   4.078
+      10% quantile:                   4.976
+      16% quantile:                   5.77
+      84% quantile:                   11.46
+      90% quantile:                   12.39
+      95% quantile:                   13.88
+      Smallest interval(s) containing at least 68% and local mode(s):
+       (4.84, 5.28) (local mode at 4.84 with rel. height 0.4498; rel. area 0.0188)
+       (5.72, 10.78) (local mode at 7.81 with rel. height 1; rel. area 0.6248)
+       (10.78, 11.22) (local mode at 10.78 with rel. height 0.4976; rel. area 0.0208)
+       (11.22, 11.66) (local mode at 11.22 with rel. height 0.4809; rel. area 0.0201)
+
+ Status of the MCMC
+ ==================
+ Convergence reached:                    yes
+ Number of iterations until convergence: 4294967295
+ Number of chains:                       1
+ Number of iterations per chain:         10000
+ Average pre-run efficiencies:
+  (0) Parameter "sample_const_peak0": 17.43%
+  (1) Parameter "bck_const_peak0": 17.47%
+  (2) Parameter "bck_gauss_peak0": 21.3%
+
+ -----------------------------------------------------
+ Notation:
+ Mean        : mean value of the marg. pdf
+ Median      : median of the marg. pdf
+ Marg. mode  : most probable value of the marg. pdf
+ V           : Variance of the marg. pdf
+ Quantiles   : most commonly used quantiles
+ -----------------------------------------------------
+

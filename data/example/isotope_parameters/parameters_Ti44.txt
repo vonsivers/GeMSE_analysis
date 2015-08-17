@@ -1,0 +1,38 @@
+# Number of peaks 
+2
+# Peak Energies (keV)
+67.9
+78.3
+# Background efficiency
+1.
+1.
+# Lower Fit Range (keV) 
+65.7234 
+76.1046 
+# Upper Fit Range (keV)
+70.0766 
+80.4954
+# lower limit of fit parameter „signal“ 
+0
+# upper limit of fit parameter „signal“ 
+10000
+# lower limit of fit parameter „sample_const“ 
+0
+0
+# upper limit of fit parameter „sample_const“ 
+800
+800
+# lower limit of fit parameter „bck_const“ 
+0
+0
+# upper limit of fit parameter „bck_const“ 
+200
+200
+# lower limit of fit parameter „bck_gauss“ 
+0
+0
+# upper limit of fit parameter „bck_gauss“ 
+500
+500
+# integration constant
+1.
