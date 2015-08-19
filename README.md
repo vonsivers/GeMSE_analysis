@@ -71,10 +71,10 @@ this file contains the necessary information for every isotope
 ####################################
 # BAT output files
 ####################################
-The following files are written for every isotope both for the signal+background and the background-only fit. The latter are indicated by the subscript „_bckonly“.
-
 # <sample_name>_activities_summary.txt: The header contains some basic information like time and date, sample name, spectrum files, measurement times etc. 
 For ever isotope the activity and the Bayesfactor are given. If the Bayesfactor is <0.33 the activity is the mode of the marginalized posterior distribution. the uncertainties correspond to the central 68% interval. If the Bayesfactor is >0.33 the 95% quantile is given.
+
+The following files are written for every isotope both for the signal+background and the background-only fit. The latter are indicated by the subscript „_bckonly“.
 
 # <sample_name>_distributions.pdf: Shows the marginalized posterior distribution for every fit parameter and their correlations.
 
