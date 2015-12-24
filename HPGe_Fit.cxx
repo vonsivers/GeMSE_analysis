@@ -54,8 +54,6 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     // data spectra
     std::vector<TH1D*> hist_sample_peak;
     std::vector<TH1D*> hist_bck_peak;
-    std::vector<int> nbins_sample;
-    std::vector<int> nbins_bck;
     
     // template histograms
     std::vector<TH1D*> temp_const_sample;
@@ -97,8 +95,12 @@ int HPGe_Fit::RunFit(TString isotope_name) {
         hist_bck_peak.push_back(GetHistoRange(name_hist_bck,fhist_bck,ffitRange_low[i],ffitRange_high[i]));
         
         // get number of bins
-        nbins_sample.push_back(hist_sample_peak[i]->GetNbinsX());
-        nbins_bck.push_back(hist_bck_peak[i]->GetNbinsX());
+        int nbins_sample = hist_sample_peak[i]->GetNbinsX();
+        int nbins_bck = hist_bck_peak[i]->GetNbinsX();
+        
+        // get xbins
+        double* xbins_sample = hist_sample_peak[i]->GetXaxis()->GetXbins()->fArray;
+        double* xbins_bck = hist_bck_peak[i]->GetXaxis()->GetXbins()->fArray;
         
         // names of template histograms
         name_temp_const_sample = TString::Format("temp_const_sample_peak%d",i);
@@ -106,11 +108,17 @@ int HPGe_Fit::RunFit(TString isotope_name) {
         name_temp_gauss_sample = TString::Format("temp_gauss_sample_peak%d",i);
         name_temp_gauss_bck = TString::Format("temp_gauss_bck_peak%d",i);
 
+        //std::cout << "##### making templates ..." << std::endl;
+
         // make template histograms
-        temp_const_sample.push_back(CreateHistConst(name_temp_const_sample, ffitRange_low[i],ffitRange_high[i], nbins_sample[i]));
-        temp_const_bck.push_back(CreateHistConst(name_temp_const_bck, ffitRange_low[i],ffitRange_high[i], nbins_bck[i]));
-        temp_gauss_sample.push_back(CreateHistGauss(name_temp_gauss_sample, fpeak_energy[i], fpeak_sigma[i], ffitRange_low[i],ffitRange_high[i], nbins_sample[i]));
-        temp_gauss_bck.push_back(CreateHistGauss(name_temp_gauss_bck, fpeak_energy[i], fpeak_sigma[i], ffitRange_low[i],ffitRange_high[i], nbins_bck[i]));
+        temp_const_sample.push_back(CreateHistConst(name_temp_const_sample, nbins_sample, xbins_sample));
+        temp_const_bck.push_back(CreateHistConst(name_temp_const_bck, nbins_bck, xbins_bck));
+        temp_gauss_sample.push_back(CreateHistGauss(name_temp_gauss_sample, fpeak_energy[i], fpeak_sigma[i], nbins_sample, xbins_sample));
+        temp_gauss_bck.push_back(CreateHistGauss(name_temp_gauss_bck, fpeak_energy[i], fpeak_sigma[i], nbins_bck, xbins_bck));
+        
+        //delete edge_sample;
+        //delete edge_bck;
+
     }
     
    	// ---------------------------------------
@@ -524,8 +532,6 @@ int HPGe_Fit::RunFit(TString isotope_name) {
 
     }
     
-    nbins_sample.clear();
-    nbins_bck.clear();
     
     return 0;
     
@@ -800,13 +806,21 @@ int HPGe_Fit::read_resolution() {
 
 TH1D* HPGe_Fit::GetHistoRange(TString name, TH1D* hist, double range_low, double range_up) {
     
-    int nbins=hist->FindBin(range_up)-hist->FindBin(range_low)+1;
+    //int nbins=hist->FindBin(range_up)-hist->FindBin(range_low)+1;
+    int bin_low = hist->FindBin(range_low);
+    int bin_up = hist->FindBin(range_up);
     
-    TH1D* hist_range = new TH1D(name,"",nbins,range_low,range_up);
+    int nbins = bin_up-bin_low+1;
+    double *xbins = new double[nbins+1];
     
-    for (int i=1; i<=nbins; ++i) {
-        int bin=hist->FindBin(hist_range->GetBinCenter(i));
-        hist_range->SetBinContent(i,hist->GetBinContent(bin));
+    for (int i=0; i<=nbins; ++i) {
+        xbins[i] = hist->GetBinLowEdge(bin_low+i);
+    }
+    
+    TH1D* hist_range = new TH1D(name,"",nbins,xbins);
+    
+    for (int i=0; i<nbins; ++i) {
+        hist_range->SetBinContent(i+1,hist->GetBinContent(bin_low+i));
     }
     
     return hist_range;
@@ -817,9 +831,9 @@ TH1D* HPGe_Fit::GetHistoRange(TString name, TH1D* hist, double range_low, double
 // Create Template Histograms
 // ----------------------------------------------------
 
-TH1D* HPGe_Fit::CreateHistConst(TString name, double range_low, double range_up, int nBins) {
+TH1D* HPGe_Fit::CreateHistConst(TString name, int nBins, double* xbins) {
     
-    TH1D* histogram = new TH1D(name, ";Energy (keV); Counts (a.u.)", nBins, range_low, range_up);
+    TH1D* histogram = new TH1D(name, ";Energy (keV); Counts (a.u.)", nBins, xbins);
     
     for (int i=1; i<=nBins; i++) {
         histogram->SetBinContent(i,1);
@@ -830,9 +844,9 @@ TH1D* HPGe_Fit::CreateHistConst(TString name, double range_low, double range_up,
     return histogram;
 }
 
-TH1D* HPGe_Fit::CreateHistGauss(TString name, double mean, double sigma,  double range_low, double range_up, int nBins) {
+TH1D* HPGe_Fit::CreateHistGauss(TString name, double mean, double sigma, int nBins, double* xbins) {
     
-    TH1D* histogram = new TH1D(name, ";Energy (keV); Counts (a.u.)", nBins, range_low, range_up);
+    TH1D* histogram = new TH1D(name, ";Energy (keV); Counts (a.u.)", nBins, xbins);
     
     double xBin;
     double yBin;
