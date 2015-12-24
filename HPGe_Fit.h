@@ -119,8 +119,8 @@ private:
     TH1D* GetHistoRange(TString name, TH1D* hist, double range_low, double range_up);
     
     // create template histograms
-    TH1D* CreateHistConst(TString name, double range_low, double range_up, int nBins);
-    TH1D* CreateHistGauss(TString name, double mean, double sigma,  double range_low, double range_up, int nBins);
+    TH1D* CreateHistConst(TString name, int nBins, double* xbins);
+    TH1D* CreateHistGauss(TString name, double mean, double sigma, int nBins, double* xbins);
 
     // get first or last empty bin
     int GetEmptyBin(TH1D* hist, TString option);

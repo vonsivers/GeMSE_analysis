@@ -1,0 +1,1 @@
+Summary : Opening logfile data/example/results/example_Co60_bckonly_log.txt

@@ -8,31 +8,31 @@
  Model: Multi-template Fitter
  Number of parameters: 7
  List of Parameters and ranges:
-  (0) Parameter "signal": [1200, 4200]
-  (1) Parameter "sample_const_peak0": [8, 80]
-  (2) Parameter "bck_const_peak0": [18, 96]
-  (3) Parameter "bck_gauss_peak0": [20, 95]
-  (4) Parameter "sample_const_peak1": [32, 136]
-  (5) Parameter "bck_const_peak1": [18, 78]
-  (6) Parameter "bck_gauss_peak1": [40, 130]
+  (0) Parameter "signal": [1100, 3800]
+  (1) Parameter "sample_const_peak0": [0, 80]
+  (2) Parameter "bck_const_peak0": [8, 80]
+  (3) Parameter "bck_gauss_peak0": [20, 100]
+  (4) Parameter "sample_const_peak1": [40, 144]
+  (5) Parameter "bck_const_peak1": [18, 82]
+  (6) Parameter "bck_gauss_peak1": [35, 125]
 
  Results of the optimization
  ===========================
  Optimization algorithm used: Minuit
- Log of the maximum posterior: 2.80097e-73
+ Log of the maximum posterior: 6.20298e-71
  List of parameters and global mode:
-  (0) Parameter "signal": 2584.42 +- 370.718
-  (1) Parameter "sample_const_peak0": 36.7866 +- 7.75473
-  (2) Parameter "bck_const_peak0": 46.5769 +- 9.48582
-  (3) Parameter "bck_gauss_peak0": 55.7988 +- 9.31287
-  (4) Parameter "sample_const_peak1": 80.6976 +- 11.951
-  (5) Parameter "bck_const_peak1": 41.7447 +- 8.58012
-  (6) Parameter "bck_gauss_peak1": 83.734 +- 10.5844
+  (0) Parameter "signal": 2506.35 +- 360.731
+  (1) Parameter "sample_const_peak0": 34.5825 +- 7.40514
+  (2) Parameter "bck_const_peak0": 39.1213 +- 8.36782
+  (3) Parameter "bck_gauss_peak0": 52.3593 +- 8.57009
+  (4) Parameter "sample_const_peak1": 84.8294 +- 12.0392
+  (5) Parameter "bck_const_peak1": 44.2948 +- 8.7004
+  (6) Parameter "bck_gauss_peak1": 81.1057 +- 10.4236
 
  Results of the integration
  ============================
  Integration method used: Cuba
- Evidence: 1.02039e-61 +- 7.02518e-18
+ Evidence: 9.75487e-60 +- 7.02518e-18
 
  Results of the marginalization
  ==============================
@@ -40,110 +40,112 @@
  List of parameters and properties of the marginalized
  distributions:
   (0) Parameter "signal":
-      Mean +- sqrt(V):                2584 +- 373.4
-      Median +- central 68% interval: 2594 +  363.8 - 389
-      (Marginalized) mode:            2625
-       5% quantile:                   1974
-      10% quantile:                   2119
-      16% quantile:                   2205
-      84% quantile:                   2970
-      90% quantile:                   3048
-      95% quantile:                   3196
+      Mean +- sqrt(V):                2497 +- 380.5
+      Median +- central 68% interval: 2491 +  391.5 - 369.9
+      (Marginalized) mode:            2598
+       5% quantile:                   1900
+      10% quantile:                   2030
+      16% quantile:                   2121
+      84% quantile:                   2898
+      90% quantile:                   2981
+      95% quantile:                   3127
       Smallest interval(s) containing at least 68% and local mode(s):
-       (2130, 2220) (local mode at 2130 with rel. height 0.6587; rel. area 0.0473)
-       (2280, 2880) (local mode at 2625 with rel. height 1; rel. area 0.5616)
-       (2880, 2940) (local mode at 2880 with rel. height 0.7333; rel. area 0.0275)
-       (2940, 3000) (local mode at 2940 with rel. height 0.6587; rel. area 0.0247)
-       (3000, 3060) (local mode at 3000 with rel. height 0.6667; rel. area 0.025)
+       (2018, 2072) (local mode at 2018 with rel. height 0.4727; rel. area 0.0173)
+       (2072, 2234) (local mode at 2194 with rel. height 0.7541; rel. area 0.1048)
+       (2234, 2423) (local mode at 2328 with rel. height 0.959; rel. area 0.1804)
+       (2423, 2747) (local mode at 2598 with rel. height 1; rel. area 0.2864)
+       (2747, 2855) (local mode at 2747 with rel. height 0.7322; rel. area 0.0703)
+       (2882, 2963) (local mode at 2882 with rel. height 0.4672; rel. area 0.0342)
 
   (1) Parameter "sample_const_peak0":
-      Mean +- sqrt(V):                38.23 +- 8
-      Median +- central 68% interval: 37.49 +  8.78 - 7.202
-      (Marginalized) mode:            34.28
-       5% quantile:                   26.47
-      10% quantile:                   28.52
-      16% quantile:                   30.29
-      84% quantile:                   46.71
-      90% quantile:                   48.91
-      95% quantile:                   51.88
+      Mean +- sqrt(V):                35.89 +- 7.434
+      Median +- central 68% interval: 35.48 +  7.588 - 7.014
+      (Marginalized) mode:            31.6
+       5% quantile:                   24.16
+      10% quantile:                   26.53
+      16% quantile:                   28.47
+      84% quantile:                   43.44
+      90% quantile:                   45.19
+      95% quantile:                   48.9
       Smallest interval(s) containing at least 68% and local mode(s):
-       (28.16, 31.04) (local mode at 28.16 with rel. height 0.6419; rel. area 0.0736)
-       (31.04, 44) (local mode at 34.28 with rel. height 1; rel. area 0.564)
-       (44, 45.44) (local mode at 44 with rel. height 0.6957; rel. area 0.0272)
-       (45.44, 46.88) (local mode at 45.44 with rel. height 0.6752; rel. area 0.0264)
+       (26.4, 28) (local mode at 26.4 with rel. height 0.5564; rel. area 0.0301)
+       (28.8, 40) (local mode at 31.6 with rel. height 1; rel. area 0.5208)
+       (40, 43.2) (local mode at 40 with rel. height 0.8743; rel. area 0.1102)
+       (44, 45.6) (local mode at 44 with rel. height 0.4787; rel. area 0.0259)
 
   (2) Parameter "bck_const_peak0":
-      Mean +- sqrt(V):                47.55 +- 9.404
-      Median +- central 68% interval: 47.39 +  8.995 - 9.376
-      (Marginalized) mode:            48.03
-       5% quantile:                   33.28
-      10% quantile:                   35.85
-      16% quantile:                   38.01
-      84% quantile:                   57.02
-      90% quantile:                   59.79
-      95% quantile:                   63.87
+      Mean +- sqrt(V):                40.75 +- 8.529
+      Median +- central 68% interval: 40.67 +  8.632 - 8.701
+      (Marginalized) mode:            42.2
+       5% quantile:                   27.17
+      10% quantile:                   30.28
+      16% quantile:                   31.97
+      84% quantile:                   49.66
+      90% quantile:                   51.86
+      95% quantile:                   55.25
       Smallest interval(s) containing at least 68% and local mode(s):
-       (36.72, 56.22) (local mode at 48.03 with rel. height 1; rel. area 0.6997)
+       (30.32, 35.36) (local mode at 33.56 with rel. height 0.7325; rel. area 0.1705)
+       (36.08, 47.6) (local mode at 42.2 with rel. height 1; rel. area 0.4662)
+       (47.6, 49.04) (local mode at 47.6 with rel. height 0.5082; rel. area 0.0247)
+       (49.04, 50.48) (local mode at 49.04 with rel. height 0.4095; rel. area 0.0199)
 
   (3) Parameter "bck_gauss_peak0":
-      Mean +- sqrt(V):                56.27 +- 9.353
-      Median +- central 68% interval: 55.72 +  10.16 - 8.226
-      (Marginalized) mode:            52.62
-       5% quantile:                   41.4
-      10% quantile:                   45.03
-      16% quantile:                   47.49
-      84% quantile:                   66.14
-      90% quantile:                   68.18
-      95% quantile:                   71.95
+      Mean +- sqrt(V):                52.57 +- 8.675
+      Median +- central 68% interval: 52.33 +  8.894 - 8.151
+      (Marginalized) mode:            52.4
+       5% quantile:                   38.47
+      10% quantile:                   41.88
+      16% quantile:                   44.18
+      84% quantile:                   61.66
+      90% quantile:                   63.91
+      95% quantile:                   67
       Smallest interval(s) containing at least 68% and local mode(s):
-       (46.25, 62.75) (local mode at 52.62 with rel. height 1; rel. area 0.621)
-       (63.5, 65) (local mode at 63.5 with rel. height 0.633; rel. area 0.0238)
-       (65, 67.25) (local mode at 66.12 with rel. height 0.7473; rel. area 0.0504)
+       (42.4, 44) (local mode at 42.4 with rel. height 0.5426; rel. area 0.0255)
+       (44, 47.2) (local mode at 45.2 with rel. height 0.6553; rel. area 0.0808)
+       (47.2, 61.6) (local mode at 52.4 with rel. height 1; rel. area 0.5752)
 
   (4) Parameter "sample_const_peak1":
-      Mean +- sqrt(V):                81.79 +- 12.38
-      Median +- central 68% interval: 81.43 +  12.3 - 12.08
-      (Marginalized) mode:            76.2
-       5% quantile:                   62.42
-      10% quantile:                   65.92
-      16% quantile:                   69.35
-      84% quantile:                   94.39
-      90% quantile:                   97.46
-      95% quantile:                   103.7
+      Mean +- sqrt(V):                86.07 +- 12.23
+      Median +- central 68% interval: 85.58 +  12.73 - 11.43
+      (Marginalized) mode:            82.12
+       5% quantile:                   66.09
+      10% quantile:                   70.52
+      16% quantile:                   74.15
+      84% quantile:                   98.83
+      90% quantile:                   102.6
+      95% quantile:                   107.1
       Smallest interval(s) containing at least 68% and local mode(s):
-       (67.36, 73.6) (local mode at 72.04 with rel. height 0.7005; rel. area 0.1226)
-       (73.6, 93.36) (local mode at 76.2 with rel. height 1; rel. area 0.5593)
+       (72.24, 74.32) (local mode at 72.24 with rel. height 0.4167; rel. area 0.02)
+       (74.32, 98.24) (local mode at 82.12 with rel. height 1; rel. area 0.6587)
+       (98.24, 100.3) (local mode at 98.24 with rel. height 0.4167; rel. area 0.02)
 
   (5) Parameter "bck_const_peak1":
-      Mean +- sqrt(V):                43.49 +- 9.173
-      Median +- central 68% interval: 42.78 +  9.843 - 8.397
-      (Marginalized) mode:            44.7
-       5% quantile:                   29.55
-      10% quantile:                   32.24
-      16% quantile:                   34.39
-      84% quantile:                   52.99
-      90% quantile:                   55.61
-      95% quantile:                   59.07
+      Mean +- sqrt(V):                45.86 +- 9.081
+      Median +- central 68% interval: 45.45 +  9.489 - 8.249
+      (Marginalized) mode:            42
+       5% quantile:                   31.49
+      10% quantile:                   34.7
+      16% quantile:                   37.2
+      84% quantile:                   55.36
+      90% quantile:                   57.76
+      95% quantile:                   61.34
       Smallest interval(s) containing at least 68% and local mode(s):
-       (33, 34.2) (local mode at 33 with rel. height 0.741; rel. area 0.0246)
-       (34.2, 43.8) (local mode at 39.9 with rel. height 0.9639; rel. area 0.3642)
-       (43.8, 51) (local mode at 44.7 with rel. height 1; rel. area 0.244)
-       (51, 53.4) (local mode at 51 with rel. height 0.5964; rel. area 0.0551)
+       (35.92, 39.12) (local mode at 37.52 with rel. height 0.7845; rel. area 0.0906)
+       (39.12, 55.12) (local mode at 42 with rel. height 1; rel. area 0.5985)
 
   (6) Parameter "bck_gauss_peak1":
-      Mean +- sqrt(V):                83.8 +- 10.64
-      Median +- central 68% interval: 83.68 +  10.13 - 10.16
-      (Marginalized) mode:            86.35
-       5% quantile:                   66.19
-      10% quantile:                   69.89
-      16% quantile:                   73.53
-      84% quantile:                   94.25
-      90% quantile:                   96.92
-      95% quantile:                   100.7
+      Mean +- sqrt(V):                81.49 +- 10.37
+      Median +- central 68% interval: 80.87 +  10.99 - 9.567
+      (Marginalized) mode:            77.75
+       5% quantile:                   65.26
+      10% quantile:                   68.62
+      16% quantile:                   71.3
+      84% quantile:                   92.4
+      90% quantile:                   95.49
+      95% quantile:                   99.35
       Smallest interval(s) containing at least 68% and local mode(s):
-       (72.4, 74.2) (local mode at 72.4 with rel. height 0.4494; rel. area 0.02)
-       (74.2, 76) (local mode at 74.2 with rel. height 0.4854; rel. area 0.0216)
-       (76, 95.8) (local mode at 86.35 with rel. height 1; rel. area 0.6509)
+       (70.1, 89) (local mode at 77.75 with rel. height 1; rel. area 0.6181)
+       (89, 92.6) (local mode at 90.35 with rel. height 0.6005; rel. area 0.0725)
 
  Status of the MCMC
  ==================
@@ -152,13 +154,13 @@
  Number of chains:                       1
  Number of iterations per chain:         10000
  Average pre-run efficiencies:
-  (0) Parameter "signal": 20.01%
-  (1) Parameter "sample_const_peak0": 19.14%
-  (2) Parameter "bck_const_peak0": 19.86%
-  (3) Parameter "bck_gauss_peak0": 20.14%
-  (4) Parameter "sample_const_peak1": 18.86%
-  (5) Parameter "bck_const_peak1": 23.54%
-  (6) Parameter "bck_gauss_peak1": 18.9%
+  (0) Parameter "signal": 20.83%
+  (1) Parameter "sample_const_peak0": 17.04%
+  (2) Parameter "bck_const_peak0": 19.76%
+  (3) Parameter "bck_gauss_peak0": 17.36%
+  (4) Parameter "sample_const_peak1": 20.2%
+  (5) Parameter "bck_const_peak1": 22.9%
+  (6) Parameter "bck_gauss_peak1": 18.57%
 
  -----------------------------------------------------
  Notation:
