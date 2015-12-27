@@ -205,29 +205,34 @@ int HPGe_Fit::RunFit(TString isotope_name) {
 
     m->MCMCSetPrecision(BCEngineMCMC::kLow);
     
-    m->MarginalizeAll();
-    
-    //----------------------------
-    // first comes signal parameter
-    //----------------------------
-    
-    SetNewLimits(m, "signal");
-    
-    //----------------------------
-    // then loop over all peaks
-    //----------------------------
-    
-    for (int i=0; i<fNpeaks; ++i) {
+    // do it 2 times
+    for (int i=0; i<2; ++i) {
         
-        // name processes
-        name_process_sample_const = TString::Format("sample_const_peak%d",i);
-        name_process_bck_const = TString::Format("bck_const_peak%d",i);
-        name_process_bck_gauss = TString::Format("bck_gauss_peak%d",i);
+        m->MarginalizeAll();
         
-        SetNewLimits(m, name_process_sample_const);
-        SetNewLimits(m, name_process_bck_const);
-        SetNewLimits(m, name_process_bck_gauss);
+        //----------------------------
+        // first comes signal parameter
+        //----------------------------
         
+        SetNewLimits(m, "signal");
+        
+        //----------------------------
+        // then loop over all peaks
+        //----------------------------
+        
+        for (int i=0; i<fNpeaks; ++i) {
+            
+            // name processes
+            name_process_sample_const = TString::Format("sample_const_peak%d",i);
+            name_process_bck_const = TString::Format("bck_const_peak%d",i);
+            name_process_bck_gauss = TString::Format("bck_gauss_peak%d",i);
+            
+            SetNewLimits(m, name_process_sample_const);
+            SetNewLimits(m, name_process_bck_const);
+            SetNewLimits(m, name_process_bck_gauss);
+            
+        }
+
     }
     
 
@@ -377,22 +382,25 @@ int HPGe_Fit::RunFit(TString isotope_name) {
 
     m_bck->MCMCSetPrecision(BCEngineMCMC::kLow);
     
-    m_bck->MarginalizeAll();
-    
-    // loop over all peaks
-    for (int i=0; i<fNpeaks; ++i) {
+    // do it 2 times
+    for (int i=0; i<2; ++i) {
+
+        m_bck->MarginalizeAll();
         
-        // name processes
-        name_process_sample_const = TString::Format("sample_const_peak%d",i);
-        name_process_bck_const = TString::Format("bck_const_peak%d",i);
-        name_process_bck_gauss = TString::Format("bck_gauss_peak%d",i);
-        
-        SetNewLimits(m_bck, name_process_sample_const);
-        SetNewLimits(m_bck, name_process_bck_const);
-        SetNewLimits(m_bck, name_process_bck_gauss);
-        
+        // loop over all peaks
+        for (int i=0; i<fNpeaks; ++i) {
+            
+            // name processes
+            name_process_sample_const = TString::Format("sample_const_peak%d",i);
+            name_process_bck_const = TString::Format("bck_const_peak%d",i);
+            name_process_bck_gauss = TString::Format("bck_gauss_peak%d",i);
+            
+            SetNewLimits(m_bck, name_process_sample_const);
+            SetNewLimits(m_bck, name_process_bck_const);
+            SetNewLimits(m_bck, name_process_bck_gauss);
+            
+        }
     }
-    
     
     // -----------------------------------------------------------
     // all parameter limits are set now continue with fit
