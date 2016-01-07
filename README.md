@@ -20,6 +20,8 @@ The following files are written for every isotope both for the signal+background
 The file must contain the following information (see „example_parameters_global.txt“):
 * sample name: name of the sample used to name the output files. Avoid spaces in the name, use underscore („_“) instead.
 * accuracy of MCMC (low/medium/high): accuracy of the Markov Chain Monte-Carlo (MCMC), can be „low“, „medium“ or „high“. „low“ takes a few minutes, „medium“ a few hours, „high“ was never tested
+* threshold on Bayes Factor for signal detection: upper limit on Bayes Factor that counts as signal detection. Suggested values are 0.33 (positive evidence) or 0.05 (strong evidence).
+* CL for activity limit: confidence level for upper limit on the activity. Suggested value is 0.95.
 * isotope parameters folder: folder name of the isotope parameters files (see below)
 * sample spectrum file name: name of the ROOT file with the sample spectrum
 * background spectrum file name: name of the ROOT file with the background spectrum

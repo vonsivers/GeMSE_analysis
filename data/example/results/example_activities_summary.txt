@@ -1,5 +1,5 @@
 #################################
-24-12-2015 01:32:08
+07-01-2016 11:34:28
 sample name: example
 sample spectrum: data/example/root_files/example_spectrum_sig.root
 background spectrum: data/example/root_files/example_spectrum_bck.root
@@ -7,18 +7,20 @@ simulated efficiencies: data/example/root_files/example_simulated_efficiencies.r
 energy resolution: data/example/root_files/example_resolution_function.root
 measurement time sample: 1.2e+06 sec.
 measurement time background: 2.4e+06 sec.
+threshold for signal: 0.33
+CL for activity limit: 0.95
 #################################
 
 Isotope 	 Activity (Bq) 	 Bayes Factor
-U238	1.01e-04 - -1.04e-04 + 1.86e-03	0.160713
-Ra226	2.19e-03 - 2.66e-04 + 2.01e-04	7.91517e-21
-Th228	1.70e-03 - 1.17e-04 + 3.87e-04	1.10452e-12
-Ra228	1.46e-03 - 3.55e-04 + 5.95e-04	0.0107075
-U235	1.61e-03 - 2.75e-04 + 2.30e-04	1.95122e-09
-Co60	1.54e-03 - 9.44e-05 + 3.79e-04	1.14575e-14
-K40	< 3.07e-03	0.907302
-Cs137	1.80e-03 - 2.98e-04 + 2.79e-04	9.86575e-11
-Mn54	1.63e-03 - 2.50e-04 + 3.06e-04	2.74928e-09
-Ti44	2.17e-03 - 3.98e-04 + 2.36e-04	7.81053e-12
-Na22	1.46e-03 - 3.15e-04 + 4.33e-04	0.00039956
-Al26	2.35e-03 - 5.06e-04 + 3.66e-04	6.0576e-08
+U238	< 2.88e-03	0.94252
+Ra226	2.10e-03 - 1.60e-04 + 3.01e-04	1.97414e-20
+Th228	1.90e-03 - 3.32e-04 + 1.82e-04	5.01506e-13
+Ra228	1.36e-03 - 2.62e-04 + 6.81e-04	0.0085622
+U235	1.65e-03 - 3.40e-04 + 2.26e-04	1.84554e-09
+Co60	1.71e-03 - 2.52e-04 + 2.08e-04	2.89641e-14
+K40	< 3.12e-03	1.01692
+Cs137	1.85e-03 - 3.56e-04 + 2.18e-04	1.02489e-10
+Mn54	1.54e-03 - 1.68e-04 + 3.78e-04	2.0958e-09
+Ti44	2.15e-03 - 3.68e-04 + 2.35e-04	3.58166e-12
+Na22	1.48e-03 - 3.63e-04 + 3.98e-04	0.000290226
+Al26	2.06e-03 - 2.09e-04 + 6.82e-04	7.09754e-08

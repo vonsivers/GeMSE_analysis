@@ -1,1 +1,0 @@
-Summary : Opening logfile data/example/results/example_Co60_log.txt
