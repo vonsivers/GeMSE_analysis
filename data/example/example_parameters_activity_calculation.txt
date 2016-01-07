@@ -2,6 +2,10 @@
 example
 # accuracy of MCMC (low/medium/high)
 low
+# threshold on Bayes Factor for signal detection
+0.33
+# CL for activity limit
+0.95
 # isotope parameters folder
 data/example/isotope_parameters
 # sample spectrum file name

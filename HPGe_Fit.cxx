@@ -63,7 +63,7 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     
     
     // check if all parameters have been set
-    if (ft_bck==0||ft_sample==0||fresults_name==""||fefficiency_name==""||fresolution_name==""||fprecision==""||fhist_sample==0||fhist_bck==0) {
+    if (ft_bck==0||ft_sample==0||fresults_name==""||fefficiency_name==""||fresolution_name==""||fprecision==""||fhist_sample==0||fhist_bck==0||fBF_limit==0||fCL==0) {
         std::cout << "##### ERROR: all parameters must be set before running the fit" << std::endl;
         return 1;
     }
@@ -277,8 +277,8 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     double counts_err_low = counts - m->GetMarginalized("signal")->GetQuantile(0.16);
     double counts_err_up = m->GetMarginalized("signal")->GetQuantile(0.84) - counts;
     
-    // get 90% CL upper limit for signal counts
-    double counts_limit = m->GetMarginalized("signal")->GetQuantile(0.95);
+    // get upper limit for signal counts
+    double counts_limit = m->GetMarginalized("signal")->GetQuantile(fCL);
     
     // print marginalized distributions
     m->PrintAllMarginalized(results_name+"_distributions.pdf");
@@ -481,7 +481,7 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     fBayesFactor = smm->BayesFactor(0,1);
     
     // check for positive signal and calculate activity
-    if (fBayesFactor<0.33) {
+    if (fBayesFactor<fBF_limit) {
         fActivityStr = TString::Format("%1.2e - %1.2e + %1.2e",counts/ft_sample,counts_err_low/ft_sample,counts_err_up/ft_sample);
     }
     else {

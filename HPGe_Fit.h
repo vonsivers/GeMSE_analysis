@@ -62,6 +62,18 @@ public:
     {fprecision = precision;};
     
     /**
+     * Set the threshold for signal detection
+     */
+    void SetBFLimit(double BF_limit)
+    {fBF_limit = BF_limit;};
+    
+    /**
+     * Set the CL for limit on signal
+     */
+    void SetCL(double CL)
+    {fCL = CL;};
+    
+    /**
      * Set the sample and background histograms
      */
     void SetSpectra(TH1D* hist_sample, TH1D* hist_bck)
@@ -140,6 +152,12 @@ private:
     
     // precision of MCMC
     TString fprecision;
+    
+    // threshold for signal detection
+    double fBF_limit;
+    
+    // CL for limit on signal
+    double fCL;
     
     // p-value
     double fPvalue;

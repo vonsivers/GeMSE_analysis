@@ -8,23 +8,23 @@
  Model: Multi-template Fitter
  Number of parameters: 3
  List of Parameters and ranges:
-  (0) Parameter "sample_const_peak0": [0, 35]
-  (1) Parameter "bck_const_peak0": [0, 19]
-  (2) Parameter "bck_gauss_peak0": [0, 24]
+  (0) Parameter "sample_const_peak0": [0, 25.2]
+  (1) Parameter "bck_const_peak0": [0, 15.96]
+  (2) Parameter "bck_gauss_peak0": [0.72, 20.88]
 
  Results of the optimization
  ===========================
  Optimization algorithm used: Minuit
- Log of the maximum posterior: 1.09292e+14
+ Log of the maximum posterior: 2.15128e+14
  List of parameters and global mode:
-  (0) Parameter "sample_const_peak0": 6.4243 +- 3.30058
-  (1) Parameter "bck_const_peak0": 2.14612 +- 1.86854
-  (2) Parameter "bck_gauss_peak0": 8.28666 +- 2.92175
+  (0) Parameter "sample_const_peak0": 6.42381 +- 3.28296
+  (1) Parameter "bck_const_peak0": 2.14662 +- 1.86193
+  (2) Parameter "bck_gauss_peak0": 8.28601 +- 2.9096
 
  Results of the integration
  ============================
  Integration method used: Cuba
- Evidence: 3.02669e+16 +- 2.58993e+14
+ Evidence: 5.93927e+16 +- 4.55606e+14
 
  Results of the marginalization
  ==============================
@@ -32,47 +32,51 @@
  List of parameters and properties of the marginalized
  distributions:
   (0) Parameter "sample_const_peak0":
-      Mean +- sqrt(V):                7.762 +- 3.387
-      Median +- central 68% interval: 7.451 +  3.745 - 3.045
-      (Marginalized) mode:            5.775
-       5% quantile:                   2.772
-      10% quantile:                   3.586
-      16% quantile:                   4.406
-      84% quantile:                   11.41
-      90% quantile:                   12.32
-      95% quantile:                   13.8
+      Mean +- sqrt(V):                7.847 +- 3.473
+      Median +- central 68% interval: 7.449 +  3.732 - 3.093
+      (Marginalized) mode:            7.686
+       5% quantile:                   3.129
+      10% quantile:                   3.83
+      16% quantile:                   4.355
+      84% quantile:                   11.35
+      90% quantile:                   12.31
+      95% quantile:                   14.47
       Smallest interval(s) containing at least 68% and local mode(s):
-       (3.85, 10.85) (local mode at 5.775 with rel. height 1; rel. area 0.692)
+       (3.78, 9.324) (local mode at 7.686 with rel. height 1; rel. area 0.5887)
+       (9.324, 10.58) (local mode at 9.324 with rel. height 0.6894; rel. area 0.0885)
+       (10.58, 11.09) (local mode at 10.58 with rel. height 0.452; rel. area 0.0179)
 
   (1) Parameter "bck_const_peak0":
-      Mean +- sqrt(V):                3.706 +- 2.503
-      Median +- central 68% interval: 3.227 +  2.729 - 1.788
-      (Marginalized) mode:            2.375
-       5% quantile:                   0.7063
-      10% quantile:                   1.078
-      16% quantile:                   1.438
-      84% quantile:                   6.093
-      90% quantile:                   6.946
-      95% quantile:                   8.604
+      Mean +- sqrt(V):                3.565 +- 2.262
+      Median +- central 68% interval: 3.136 +  2.502 - 1.678
+      (Marginalized) mode:            3.272
+       5% quantile:                   0.6665
+      10% quantile:                   1.114
+      16% quantile:                   1.457
+      84% quantile:                   5.799
+      90% quantile:                   6.589
+      95% quantile:                   7.944
       Smallest interval(s) containing at least 68% and local mode(s):
-       (0.76, 4.75) (local mode at 2.375 with rel. height 1; rel. area 0.6611)
-       (4.94, 5.32) (local mode at 4.94 with rel. height 0.4239; rel. area 0.0209)
+       (0.9576, 4.788) (local mode at 3.272 with rel. height 1; rel. area 0.6549)
+       (5.107, 5.426) (local mode at 5.107 with rel. height 0.4875; rel. area 0.0195)
+       (5.426, 5.746) (local mode at 5.426 with rel. height 0.54; rel. area 0.0216)
 
   (2) Parameter "bck_gauss_peak0":
-      Mean +- sqrt(V):                8.423 +- 2.963
-      Median +- central 68% interval: 8.156 +  3.151 - 2.512
-      (Marginalized) mode:            7.56
-       5% quantile:                   3.849
-      10% quantile:                   4.784
-      16% quantile:                   5.643
-      84% quantile:                   11.42
-      90% quantile:                   12.34
-      95% quantile:                   13.91
+      Mean +- sqrt(V):                8.376 +- 2.883
+      Median +- central 68% interval: 8.231 +  2.971 - 2.699
+      (Marginalized) mode:            5.861
+       5% quantile:                   3.929
+      10% quantile:                   4.8
+      16% quantile:                   5.533
+      84% quantile:                   11.34
+      90% quantile:                   12.24
+      95% quantile:                   13.52
       Smallest interval(s) containing at least 68% and local mode(s):
-       (4.56, 5.04) (local mode at 4.56 with rel. height 0.4551; rel. area 0.0208)
-       (5.52, 10.32) (local mode at 7.56 with rel. height 1; rel. area 0.5916)
-       (10.32, 11.28) (local mode at 10.92 with rel. height 0.4967; rel. area 0.0651)
-       (11.28, 11.76) (local mode at 11.28 with rel. height 0.4486; rel. area 0.0205)
+       (4.55, 4.954) (local mode at 4.55 with rel. height 0.4939; rel. area 0.0162)
+       (5.155, 5.76) (local mode at 5.458 with rel. height 0.689; rel. area 0.039)
+       (5.76, 9.994) (local mode at 5.76 with rel. height 1; rel. area 0.5297)
+       (9.994, 11) (local mode at 10.7 with rel. height 0.7043; rel. area 0.084)
+       (11, 11.4) (local mode at 11 with rel. height 0.6738; rel. area 0.0221)
 
  Status of the MCMC
  ==================
@@ -81,9 +85,9 @@
  Number of chains:                       1
  Number of iterations per chain:         10000
  Average pre-run efficiencies:
-  (0) Parameter "sample_const_peak0": 16.97%
-  (1) Parameter "bck_const_peak0": 18.67%
-  (2) Parameter "bck_gauss_peak0": 21.3%
+  (0) Parameter "sample_const_peak0": 21.83%
+  (1) Parameter "bck_const_peak0": 22.33%
+  (2) Parameter "bck_gauss_peak0": 23.4%
 
  -----------------------------------------------------
  Notation:

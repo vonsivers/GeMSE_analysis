@@ -26,7 +26,7 @@ using namespace std;
 // parameters to read from file 'parameters_global.txt'
 TString fname, faccuracy, fparameters_folder, fsample_name, fbck_name, fresults_name, fefficiency_name, fresolution_name;
 std::vector<TString> fisotope_name;
-double ft_sample, ft_bck;
+double ft_sample, ft_bck, fBF_limit, fCL;
 
 // sample and background spectra
 TH1D* fhist_sample;
@@ -59,6 +59,12 @@ int read_parameters_global(TString FileName) {
     getline(File, headerline);
     getline(File, headerline);
     File >> faccuracy;
+    getline(File, headerline);
+    getline(File, headerline);
+    File >> fBF_limit;
+    getline(File, headerline);
+    getline(File, headerline);
+    File >> fCL;
     getline(File, headerline);
     getline(File, headerline);
     File >> fparameters_folder;
@@ -100,6 +106,8 @@ int read_parameters_global(TString FileName) {
     std::cout << "#### Reading "<< FileName << " ..." << std::endl;
     std::cout << "sample name: " << fname << std::endl;
     std::cout << "accuracy of MCMC: " << faccuracy << std::endl;
+    std::cout << "threshold for signal detection: " << fBF_limit << std::endl;
+    std::cout << "CL for limit on activity: " << fCL << std::endl;
     std::cout << "isotope parameters folder: " << fsample_name << std::endl;
     std::cout << "sample spectrum filename: " << fsample_name << std::endl;
     std::cout << "bck spectrum filename: " << fbck_name << std::endl;

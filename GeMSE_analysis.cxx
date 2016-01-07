@@ -69,6 +69,8 @@ int main(int argc, char *argv[]) {
     results_file << "energy resolution: " << fresolution_name << "\n";
     results_file << "measurement time sample: " << ft_sample << " sec." << "\n";
     results_file << "measurement time background: " << ft_bck << " sec." << "\n";
+    results_file << "threshold for signal: " << fBF_limit << "\n";
+    results_file << "CL for activity limit: " << fCL << "\n";
     results_file << "#################################" << "\n";
     results_file << "\n";
     results_file << "Isotope \t Activity (Bq) \t Bayes Factor" << "\n";
@@ -79,6 +81,8 @@ int main(int argc, char *argv[]) {
     // set parameters
     fit->SetParametersFolder(fparameters_folder);
     fit->SetPrecision(faccuracy);
+    fit->SetBFLimit(fBF_limit);
+    fit->SetCL(fCL);
     fit->SetSpectra(fhist_sample, fhist_bck);
     fit->SetEfficiencyFile(fefficiency_name);
     fit->SetResolutionFile(fresolution_name);

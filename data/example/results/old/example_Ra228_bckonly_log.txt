@@ -1,1 +1,0 @@
-Summary : Opening logfile data/example/results/example_Ra228_bckonly_log.txt
