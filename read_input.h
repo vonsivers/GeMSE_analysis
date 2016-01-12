@@ -94,8 +94,10 @@ int read_parameters_global(TString FileName) {
     while (true)
     {
         File >> isotope_name;
+        
+        if( File.eof() || isotope_name=="" ) break;
+
         fisotope_name.push_back(isotope_name);
-        if( File.eof() ) break;
 
     }
     
