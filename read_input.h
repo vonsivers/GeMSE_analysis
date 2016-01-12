@@ -17,6 +17,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <TVectorD.h>
 
 #include <iostream>
 using namespace std;
@@ -85,17 +86,11 @@ int read_parameters_global(TString FileName) {
     File >> fresults_name;
     getline(File, headerline);
     getline(File, headerline);
-    File >> ft_sample;
-    getline(File, headerline);
-    getline(File, headerline);
-    File >> ft_bck;
-    getline(File, headerline);
-    getline(File, headerline);
     while (true)
     {
         File >> isotope_name;
         
-        if( File.eof() || isotope_name=="" ) break;
+        if(isotope_name=="" ) break;
 
         fisotope_name.push_back(isotope_name);
 
@@ -116,8 +111,6 @@ int read_parameters_global(TString FileName) {
     std::cout << "efficiency filename: " << fefficiency_name << std::endl;
     std::cout << "resolution filename: " << fresolution_name << std::endl;
     std::cout << "results folder: " << fresults_name << std::endl;
-    std::cout << "measurement time sample spectrum: " << ft_sample << std::endl;
-    std::cout << "measurement time bck spectrum: " << ft_bck << std::endl;
     std::cout << "isotopes to analyze:" << std::endl;
     for (int i=0; i<fisotope_name.size(); ++i)
     {
@@ -143,9 +136,9 @@ int read_spectra() {
         return 1;
     }
     
-    TFile* file_sig = TFile::Open(fsample_name);
+    TFile* file_sample = TFile::Open(fsample_name);
     
-    if (!file_sig) {
+    if (!file_sample) {
         std::cout << "##### ERROR: could not open " << fsample_name << std::endl;
         return 1;
     }
@@ -155,13 +148,31 @@ int read_spectra() {
         return 1;
     }
     
-    if (!file_sig->GetListOfKeys()->Contains("hist")) {
+    if (!file_sample->GetListOfKeys()->Contains("hist")) {
         std::cout << "##### ERROR: no histogram in file " << fsample_name << std::endl;
         return 1;
     }
     
     fhist_bck = (TH1D*) file_bck->Get("hist");
-    fhist_sample = (TH1D*) file_sig->Get("hist");
+    fhist_sample = (TH1D*) file_sample->Get("hist");
+    
+    
+    if (!file_bck->GetListOfKeys()->Contains("t_live")) {
+        std::cout << "##### ERROR: no live time in file " << fbck_name << std::endl;
+        return 1;
+    }
+
+    if (!file_sample->GetListOfKeys()->Contains("t_live")) {
+        std::cout << "##### ERROR: no live time in file " << fsample_name << std::endl;
+        return 1;
+    }
+
+    
+    TVectorD* v_live_bck = (TVectorD*) file_bck->Get("t_live");
+    ft_bck = ((*v_live_bck)[0]);
+    
+    TVectorD* v_live_sample = (TVectorD*) file_sample->Get("t_live");
+    ft_sample = ((*v_live_sample)[0]);
     
     return 0;
 
