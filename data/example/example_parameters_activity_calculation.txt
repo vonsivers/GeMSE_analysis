@@ -18,10 +18,6 @@ data/example/root_files/example_simulated_efficiencies.root
 data/example/root_files/example_resolution_function.root
 # results folder
 data/example/results
-# measurement time of sample spectrum (sec.)
-1.2e6
-# measurement time of background spectrum (sec.)
-2.4e6
 # isotopes to analyze 
 U238
 Ra226

@@ -28,8 +28,6 @@ The file must contain the following information (see „example_parameters_globa
 * efficiency file name: name of the ROOT file with the simulated efficiencies
 * resolution file name: name of the ROOT file with the energy resolution
 * results folder: name of the folder where the results should be written
-* measurement time of sample spectrum (sec.): measurement time of the sample spectrum
-* measurement time of background spectrum (sec.): measurement time of the background spectrum
 * isotopes to analyze: names of all isotopes to analyze, for every isotope a parameters file must exist in the folder specified above
 
 ## parameters_isotope.txt
