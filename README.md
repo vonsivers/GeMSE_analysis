@@ -7,7 +7,7 @@ GeMSE_analysis <parameters_activity_calculation.txt>
 ```
 ## Output
 The results folder contains the following files:
-* sample_activities_summary.txt: The header contains some basic information like time and date, sample name, spectrum files, measurement times etc. For ever isotope the activity and the Bayesfactor are given. If the Bayesfactor is <0.33 the activity is the mode of the marginalized posterior distribution. The uncertainties correspond to the central 68% interval. If the Bayesfactor is >0.33 the 95% quantile is given.
+* sample_activities_summary.txt: The header contains some basic information like time and date, sample name, spectrum files, measurement times etc. For ever isotope the activity and the Bayesfactor are given. If the Bayesfactor is smaller than a specified value the activity is the mode of the marginalized posterior distribution. The uncertainties correspond to the central 68% interval. If the Bayesfactor is larger than a certain value the quantile at a specified confidence level is given.
 The following files are written for every isotope both for the signal+background and the background-only fit. The latter are indicated by the subscript „_bckonly“.
 * sample_isotope_distributions.pdf: Shows the marginalized posterior distribution for every fit parameter and their correlations.
 * sample_isotope_log.txt: Logfile of the BAT fitting algorithm. Any errors that occur during fitting are summarized here.
