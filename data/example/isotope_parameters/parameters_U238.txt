@@ -19,30 +19,30 @@
 # lower limit of fit parameter „signal“ (Bq)
 0
 # upper limit of fit parameter „signal“ (Bq)
-10000
+100000
 # lower limit of fit parameter „sample_const“ (Hz)
 0
 0
 0
 # upper limit of fit parameter „sample_const“ (Hz)
-500
-500
-500
+5000
+5000
+5000
 # lower limit of fit parameter „bck_const“ (Hz)
 0
 0
 0
 # upper limit of fit parameter „bck_const“ (Hz)
-500
-500
-100
+5000
+5000
+1000
 # lower limit of fit parameter „bck_gauss“ (Hz)
 0
 0
 0
 # upper limit of fit parameter „bck_gauss“ (Hz)
-100
-100
-100
+1000
+1000
+1000
 # integration constant
 1.
