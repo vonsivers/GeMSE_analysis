@@ -156,7 +156,7 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     // names of channels
     TString name_channel_sample, name_channel_bck;
     
-    // add systematic unceratinty of efficiencies
+    // add systematic uncertainty for efficiencies
     m->AddSystematic("efficiency_err", -5., 5.);
     m->SetPriorGauss("efficiency_err", 0., 1.);
 

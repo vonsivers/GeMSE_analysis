@@ -6,7 +6,7 @@ low
 0.33
 # CL for activity limit
 0.95
-# fractional uncertainty of efficiency
+# fractional uncertainty of efficiencies
 0.02
 # isotope parameters folder
 data/example/isotope_parameters
