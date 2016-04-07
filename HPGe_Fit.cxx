@@ -156,6 +156,10 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     // names of channels
     TString name_channel_sample, name_channel_bck;
     
+    // add systematic unceratinty of efficiencies
+    m->AddSystematic("efficiency_err", -5., 5.);
+    m->SetPriorGauss("efficiency_err", 0., 1.);
+
     // loop over all peaks
     for (int i=0; i<fNpeaks; ++i) {
         
@@ -187,6 +191,9 @@ int HPGe_Fit::RunFit(TString isotope_name) {
         m->SetTemplate(name_channel_sample, name_process_bck_gauss, *temp_gauss_sample[i], fefficiency_bck[i]*ft_sample/ft_bck);
         m->SetTemplate(name_channel_bck, name_process_bck_const, *temp_const_bck[i], 1.);
         m->SetTemplate(name_channel_bck, name_process_bck_gauss, *temp_gauss_bck[i], 1.);
+        
+        // set systematics
+        m->SetSystematicVariation(name_channel_sample, "signal", "efficiency_err", feff_err, feff_err);
 
         // set priors
         m->SetPriorConstant("signal");

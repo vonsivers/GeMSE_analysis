@@ -74,6 +74,13 @@ public:
     {fCL = CL;};
     
     /**
+     * Set the CL for limit on signal
+     */
+    void SetEffErr(double err)
+    {feff_err = err;};
+
+    
+    /**
      * Set the sample and background histograms
      */
     void SetSpectra(TH1D* hist_sample, TH1D* hist_bck)
@@ -158,6 +165,9 @@ private:
     
     // CL for limit on signal
     double fCL;
+    
+    // uncertainty of efficiencies
+    double feff_err;
     
     // p-value
     double fPvalue;
