@@ -66,6 +66,7 @@ int main(int argc, char *argv[]) {
     results_file << "sample spectrum: " << fsample_name << "\n";
     results_file << "background spectrum: " << fbck_name << "\n";
     results_file << "simulated efficiencies: " << fefficiency_name << "\n";
+    results_file << "uncertainty efficiencies: " << feff_err << "\n";
     results_file << "energy resolution: " << fresolution_name << "\n";
     results_file << "measurement time sample: " << ft_sample << " sec." << "\n";
     results_file << "measurement time background: " << ft_bck << " sec." << "\n";
@@ -83,6 +84,7 @@ int main(int argc, char *argv[]) {
     fit->SetPrecision(faccuracy);
     fit->SetBFLimit(fBF_limit);
     fit->SetCL(fCL);
+    fit->SetEffErr(feff_err);
     fit->SetSpectra(fhist_sample, fhist_bck);
     fit->SetEfficiencyFile(fefficiency_name);
     fit->SetResolutionFile(fresolution_name);

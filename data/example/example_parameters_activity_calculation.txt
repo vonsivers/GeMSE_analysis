@@ -6,6 +6,8 @@ low
 0.33
 # CL for activity limit
 0.95
+# fractional uncertainty of efficiency
+0.02
 # isotope parameters folder
 data/example/isotope_parameters
 # sample spectrum file name
@@ -23,7 +25,6 @@ U238
 Ra226
 Th228
 Ra228
-U235
 Co60
 K40
 Cs137
