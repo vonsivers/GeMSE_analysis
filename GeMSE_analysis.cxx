@@ -66,11 +66,11 @@ int main(int argc, char *argv[]) {
     results_file << "sample spectrum: " << fsample_name << "\n";
     results_file << "background spectrum: " << fbck_name << "\n";
     results_file << "simulated efficiencies: " << fefficiency_name << "\n";
-    results_file << "uncertainty efficiencies: " << feff_err << "\n";
+    results_file << "fractional uncertainty efficiencies: " << feff_err << "\n";
     results_file << "energy resolution: " << fresolution_name << "\n";
     results_file << "measurement time sample: " << ft_sample << " sec." << "\n";
     results_file << "measurement time background: " << ft_bck << " sec." << "\n";
-    results_file << "threshold for signal: " << fBF_limit << "\n";
+    results_file << "BF threshold for signal: " << fBF_limit << "\n";
     results_file << "CL for activity limit: " << fCL << "\n";
     results_file << "#################################" << "\n";
     results_file << "\n";

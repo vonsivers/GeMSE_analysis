@@ -156,10 +156,10 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     // names of channels
     TString name_channel_sample, name_channel_bck;
     
-    // add systematic uncertainty for efficiencies
-    m->AddSystematic("efficiency_err", -5., 5.);
-    m->SetPriorGauss("efficiency_err", 0., 1.);
-
+    // names of systematics
+    TString name_channel_systematic;
+    
+    
     // loop over all peaks
     for (int i=0; i<fNpeaks; ++i) {
         
@@ -172,6 +172,9 @@ int HPGe_Fit::RunFit(TString isotope_name) {
         name_channel_sample = TString::Format("sample_peak%d",i);
         name_channel_bck = TString::Format("bck_peak%d",i);
         
+        // name systematics
+        name_channel_systematic = TString::Format("efficiency_err_peak%d",i);
+        
         // add channels (the order is important!)
         m->AddChannel(name_channel_sample);
         m->AddChannel(name_channel_bck);
@@ -180,6 +183,9 @@ int HPGe_Fit::RunFit(TString isotope_name) {
         m->AddProcess(name_process_sample_const, flimit_const_sample_low[i], flimit_const_sample_up[i]);
         m->AddProcess(name_process_bck_const, flimit_const_bck_low[i], flimit_const_bck_up[i]);
         m->AddProcess(name_process_bck_gauss, flimit_gauss_bck_low[i], flimit_gauss_bck_up[i]);
+        
+        // add systematic uncertainty for efficiencies
+        m->AddSystematic(name_channel_systematic, -5., 5.);
         
         // set data
         m->SetData(name_channel_sample, *hist_sample_peak[i]);
@@ -193,10 +199,11 @@ int HPGe_Fit::RunFit(TString isotope_name) {
         m->SetTemplate(name_channel_bck, name_process_bck_gauss, *temp_gauss_bck[i], 1.);
         
         // set systematics
-        m->SetSystematicVariation(name_channel_sample, "signal", "efficiency_err", feff_err, feff_err);
+        m->SetSystematicVariation(name_channel_sample, "signal", name_channel_systematic, feff_err, feff_err);
 
         // set priors
         m->SetPriorConstant("signal");
+        m->SetPriorGauss(name_channel_systematic, 0., 1.);
         m->SetPriorConstant(name_process_sample_const);
         m->SetPriorConstant(name_process_bck_const);
         m->SetPriorConstant(name_process_bck_gauss);
