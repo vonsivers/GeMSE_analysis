@@ -34,6 +34,7 @@ The file must contain the following information (see „example_parameters_globa
 ## parameters_isotope.txt
 This file contains the necessary information for every isotope:
 
+* half-life (sec.): half-life of the isotope in seconds
 * number of peaks: number of peaks that should be used to calculate the activity
 * peak energies (keV): energies of the peaks in keV
 * background efficiency: accounts for a possible reduction of the peak in the sample spectrum compared to the background spectrum. This factor is usually set to 1, however sometimes the background in the sample spectrum is lower than in the background spectrum. This is for example the case when the sample fills out the whole cavity so there is less background from radon. If it is known how much this reduces the background (e.g. by a factor of 2) the background efficiency can be set to the corresponding value (e.g. 0.5)

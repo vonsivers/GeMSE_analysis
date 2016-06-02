@@ -1,3 +1,5 @@
+# Half-life (sec.)
+5.04907776000000000e+10
 # Number of peaks 
 5
 # Peak Energies (keV)
@@ -27,7 +29,7 @@
 # lower limit of fit parameter „signal“ 
 0
 # upper limit of fit parameter „signal“ 
-100000
+1000000
 # lower limit of fit parameter „sample_const“ 
 0
 0

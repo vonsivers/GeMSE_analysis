@@ -1,7 +1,7 @@
 # sample name
 example
 # accuracy of MCMC (low/medium/high)
-low
+medium
 # threshold on Bayes Factor for signal detection
 0.33
 # CL for activity limit
@@ -11,15 +11,15 @@ low
 # isotope parameters folder
 data/example/isotope_parameters
 # sample spectrum file name
-data/example/root_files/example_spectrum_sig.root
+data/example/root_files/example_spectrum_sig_1e-2Bq.root
 # background spectrum file name
-data/example/root_files/example_spectrum_bck.root
+data/example/root_files/example_spectrum_bck_1e-3Bq.root
 # efficiency file name
 data/example/root_files/example_simulated_efficiencies.root
 # resolution file name
 data/example/root_files/example_resolution_function.root
 # results folder
-data/example/results
+data/example/results/1e-3Bq
 # isotopes to analyze 
 U238
 Ra226
