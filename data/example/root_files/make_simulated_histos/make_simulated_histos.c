@@ -9,7 +9,7 @@ void make_simulated_histos()
     double t_bck = 4.e6; // measurement time in sec (background)
     double t_sample = 2.e6; // measurement time in sec (sample)
     double activity_bck = 1.e-3; // activity in Bq (bck)
-    double activity_sample = 1.e-2; // activity in Bq (sample)
+    double activity_sample = 1.e-3; // activity in Bq (sample)
     
     TH1D* hist_bck = make_histo("simulated_histo_bck",activity_bck,t_bck);
     TH1D* hist_sig = make_histo("simulated_histo_sig",activity_sample+activity_bck,t_sample);

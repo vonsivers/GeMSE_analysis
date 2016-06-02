@@ -496,10 +496,18 @@ int HPGe_Fit::RunFit(TString isotope_name) {
     
     // check for positive signal and calculate activity
     if (fBayesFactor<fBF_limit) {
-        fActivityStr = TString::Format("%1.2e - %1.2e + %1.2e",counts/ft_sample,counts_err_low/ft_sample,counts_err_up/ft_sample);
+        
+        double activity = counts*log(2)/fhalflife*exp(-log(2)*ft_sample/fhalflife)/(1-exp(-log(2)*ft_sample/fhalflife));
+        double activity_err_low = counts_err_low*log(2)/fhalflife*exp(-log(2)*ft_sample/fhalflife)/(1-exp(-log(2)*ft_sample/fhalflife));
+        double activity_err_up = counts_err_up*log(2)/fhalflife*exp(-log(2)*ft_sample/fhalflife)/(1-exp(-log(2)*ft_sample/fhalflife));
+
+        fActivityStr = TString::Format("%1.2e - %1.2e + %1.2e",activity,activity_err_low,activity_err_up);
     }
     else {
-        fActivityStr = TString::Format("< %1.2e",counts_limit/ft_sample);
+        
+        double activity_limit = counts_limit*log(2)/fhalflife*exp(-log(2)*ft_sample/fhalflife)/(1-exp(-log(2)*ft_sample/fhalflife));
+        
+        fActivityStr = TString::Format("< %1.2e",activity_limit);
     }
     
     
@@ -594,6 +602,9 @@ int HPGe_Fit::read_parameters_isotope(TString isotope_name) {
     
     double peak_energy, efficiency_bck, fitRange_low, fitRange_high, limit_const_sample_low, limit_const_sample_up, limit_const_bck_low, limit_const_bck_up, limit_gauss_bck_low, limit_gauss_bck_up;
     
+    getline(File, headerline);
+    File >> fhalflife;
+    getline(File, headerline);
     getline(File, headerline);
     File >> fNpeaks;
     getline(File, headerline);

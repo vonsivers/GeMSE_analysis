@@ -1,15 +1,15 @@
 # Half-life (sec.)
-2.25630662400000000e+13
+4.59993600000000000e+06
 # Number of peaks 
 1
 # Peak Energies (keV)
-1808.7
+477.6
 # Background efficiency
 1.
 # Lower Fit Range (keV) 
-1804.24 
+474.5
 # Upper Fit Range (keV)
-1813.16 
+480.7
 # lower limit of fit parameter „signal“ 
 0
 # upper limit of fit parameter „signal“ 

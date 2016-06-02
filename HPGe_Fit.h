@@ -187,6 +187,7 @@ private:
     double fconstant;
     double flimit_sig_low;
     double flimit_sig_up;
+    double fhalflife;
     int fNpeaks;
     std::vector<double> fpeak_energy;
     std::vector<double> fefficiency_bck;
