@@ -693,6 +693,7 @@ int HPGe_Fit::read_parameters_isotope(TString isotope_name) {
     // print information
     std::cout << "######################################" << std::endl;
     std::cout << "#### Reading " << FileName << " ..." << std::endl;
+    std::cout << "halflife (sec.): " << fhalflife << std::endl;
     std::cout << "number of peaks: " << fNpeaks << std::endl;
     std::cout << "peak energies:" << std::endl;
     for (int i=0; i<fNpeaks; ++i)
