@@ -19,7 +19,7 @@ data/example/root_files/example_simulated_efficiencies.root
 # resolution file name
 data/example/root_files/example_resolution_function.root
 # results folder
-data/example/results/1e-3Bq
+data/example/results/1e-2Bq
 # isotopes to analyze 
 U238
 Ra226
