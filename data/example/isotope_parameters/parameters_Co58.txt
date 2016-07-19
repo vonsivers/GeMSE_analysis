@@ -1,5 +1,5 @@
 # Half-life (sec.)
-8.67326400000000000e+06
+6.12230400000000000e+06
 # Number of peaks 
 1
 # Peak Energies (keV)
